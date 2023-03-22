@@ -3,7 +3,7 @@ from postgres.models import *
 import random
 import string
 from django.conf import settings
-from mongobench.mongobench.utils import generate_random_text
+from mongobench.utils import generate_random_text
 
 
 class Command(BaseCommand):
