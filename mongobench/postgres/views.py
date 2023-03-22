@@ -53,8 +53,10 @@ class PostView(APIView):
         )
         resp["time_delete"] = dt / n
 
-
-        dt = timeit.timeit(lambda: Post.objects.filter(title="test").select_related('author').get(), number=n)
+        dt = timeit.timeit(
+            lambda: Post.objects.filter(title="test").select_related("author").get(),
+            number=n,
+        )
         resp["time_relation"] = dt / n
 
         return Response(resp)
